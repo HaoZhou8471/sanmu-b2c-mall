@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <!-- TemplateBeginEditable name="doctitle" -->
+    <title>{$page_title}</title>
+    <!-- TemplateEndEditable -->
+    <!-- TemplateBeginEditable name="head" -->
+    <!-- TemplateEndEditable -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link rel="stylesheet" type="text/css" href="themes/sanmubuy/css/user.css" />
+    <script type="text/javascript" src="themes/sanmubuy/js/jquery-1.9.1.min.js"></script>
+    {insert_scripts files='jquery.json.js,transport.js,json2.js'}
+    {* 包含脚本文件 *}
+    {insert_scripts files='common.js,user.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="margin-w1210 clearfix"> <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+    <div class="user-left"> <!-- #BeginLibraryItem "/library/user_info.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem --> </div>
+    <div class="user-right">
+        <div class="box">
+            <table width="100%" border="0" cellpadding="10" cellspacing="1" bgcolor="#eeeeee">
+                <tr align="center">
+                    <td>会员账号</td>
+                    <td>子账号联系人电话</td>
+                    <td>会员注册时间</td>
+					<td>所在部门(分公司)</td>
+					<td>月消费额度</td>
+                    <td>会员订单</td>
+					 
+                </tr>
+                <!--{foreach from=$userlist item=item}-->
+                <tr>
+                    <td align="center"><a href="user.php?act=user_edit&userid={$item.user_id}">{$item.user_name}</a></td>
+                    <td align="center">{$item.mobile_phone}</td>
+                    <td align="center">{$item.reg_time}</td>
+					{if $item.credit_line neq ''} <td align="center">{$item.credit_line}</td>{else} <td align="center"></td>{/if}
+					{if $item.yueedu neq ''} <td align="center">{$item.yueedu}元</td>{else} <td align="center"></td>{/if}
+                    <td align="center"><a href="user.php?act=orderlist&userid={$item.user_id}">订单数({$item.order})</a></td>
+                    
+                </tr>
+                <!--{/foreach}-->
+            </table>
+        </div>
+    </div>
+</div>
+<div class="pop-main pop-compare">
+    <div class="pop-header"> <span>温馨提示</span> <a class="pop-close" href="javascript:;" title="关闭"></a> </div>
+    <div class="pop-con"> <i class="pop-icon"></i>
+        <p class="pop-text" style="padding-top: 20px;">您确定要取消该订单吗？取消订单后，不能恢复。</p>
+        <div class="pop-btn"> <a href="javascript:;" class="main-bg-color sure-btn">确定</a><a class="cancel-btn">取消</a><span class="clear"></span></div>
+    </div>
+</div>
+<div class="pop-mask"></div>
+<div class="site-footer">
+    <div class="footer-related"> <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> </div>
+</div>
+</body>
+
+<script type="text/javascript">
+    {foreach from=$lang.clips_js item=item key=key}
+    var {$key} = "{$item}";
+    {/foreach}
+    $(function(){
+        $('.cancel-order').click(function(){
+            $('.pop-mask').show();
+            $('.pop-compare').show().css({'top':($(window).height()-$('.pop-compare').height())/2});
+            $('.sure-btn').attr('href',$(this).prev('.none').attr('href'));
+
+        })
+    })
+</script>
+</html>

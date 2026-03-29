@@ -1,0 +1,66 @@
+<!--超值套装 begin-->
+		<!-- {if $package_goods_list} -->
+  <div class="clearfix" style="clear:both;">
+
+  <div class="goodsTagTitle clearfix">
+   <!-- {foreach name=package_goods_list_1 from=$package_goods_list item=package_goods} --> 
+		  <h2 id="czjb_btn_{$smarty.foreach.package_goods_list_1.iteration}" onClick='change_tab("czjb_btn_", "czlb_cont_", {$smarty.foreach.package_goods_list_1.iteration},{$smarty.foreach.package_goods_list_1.total},"","h2bg")' {if $smarty.foreach.package_goods_list_1.iteration neq 1} class="h2bg" {/if}><span class="left"></span><span class="right"></span>{$package_goods.act_name}</h2>
+          <!-- {/foreach} -->
+	</div>
+   <!-- {foreach name=package_goods_list_2  from=$package_goods_list item=package_goods} --> 
+    <div id="czlb_cont_{$smarty.foreach.package_goods_list_2.iteration}" class="suit" {if $smarty.foreach.package_goods_list_2.iteration neq 1}  style="display:none;" {/if}>
+    
+    <div class="mainP">
+    <div class="p_Img"><a href="{$package_goods.goods_main.url}" target="_blank" rel="noopener noreferrer"><img src="{$package_goods.goods_main.goods_thumb}"></a></div>
+    <div class="p_Name"><a href="{$package_goods.goods_main.url}" target="_blank" rel="noopener noreferrer">{$package_goods.goods_main.short_name}</a>
+    </div></div>
+    
+    <div id="suitPWrap0" class="Product_List_S3" style="width: 390px;">
+    <ul id="suitP0" style="width: 460px;">
+    <!-- {foreach from=$package_goods.goods_list item=goods_list} -->
+    {if $goods_list.goods_id neq package_goods.goods_id}
+    <li><dl><dt><a href="{$goods_list.url}" target="_blank" rel="noopener noreferrer"><img src="{$goods_list.goods_thumb}"></a></dt><dd class="p_Name"><a href="{$goods_list.url}" target="_blank" rel="noopener noreferrer">{$goods_list.short_name}</a></dd></dl></li>
+    {/if}
+   <!-- {/foreach} --> 
+    </ul></div>
+    
+    <div class="suitOp">{$package_goods.act_name}&gt;&gt;<br>套装价：<strong><font style="font-size: 12px;"></font>{$package_goods.package_price}</strong><br>原&nbsp;&nbsp;价：<span style="text-decoration: line-through;">{$package_goods.subtotal}</span><br><font color="green">立即节省：{$package_goods.saving}</font><br><a href="javascript:addPackageToCart({$package_goods.act_id})"><img src="http://www.360buy.com/images/suit_10.gif" id="buy19521"></a></div>
+    
+    
+    
+    
+    </div>
+    <!-- {/foreach} -->
+				                
+				
+				
+				
+  </div>
+
+  <!-- {/if} -->
+  <!--超值套装 end-->
+
+ <script>
+ function change_tab(btn_pre, cont_pre, cnum,num,css_on,css_off)
+{
+  var button;
+  var content;
+  for(i=1;i<=num;i++)
+  {
+	  button  = document.getElementById(btn_pre+i);
+	  content = document.getElementById(cont_pre+i);
+	  if(i== cnum)
+	  {
+		button.className = css_on;
+		content.style.display='';
+	  }
+	  else
+	  {
+		button.className= css_off;
+		content.style.display='none';  
+	  }
+	  
+	  
+  }
+}
+ </script>

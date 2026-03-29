@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <!-- TemplateBeginEditable name="doctitle" -->
+    <title>{$page_title}</title>
+    <!-- TemplateEndEditable -->
+    <!-- TemplateBeginEditable name="head" -->
+    <!-- TemplateEndEditable -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link rel="stylesheet" type="text/css" href="themes/sanmubuy/css/user.css" />
+    <script type="text/javascript" src="themes/sanmubuy/js/jquery-1.9.1.min.js"></script>
+    {insert_scripts files='jquery.json.js,transport.js,json2.js'}
+    {* 包含脚本文件 *}
+    {insert_scripts files='common.js,user.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="margin-w1210 clearfix"> <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+    <div class="user-left"> <!-- #BeginLibraryItem "/library/user_info.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem --> </div>
+    <div class="user-right">
+        <div class="box">
+		<form name="formEdit" action="user.php" method="post">
+            <table width="100%"  bgcolor="#eeeeee">
+			<tr align="center"><h1>修改账号信息</h1></tr>	
+  <tr align="right">
+  	<td class="label">会员账号:</td>
+    <td><input type="text" name="user_name" size="40" class="inputBg" value="{$user.user_name}"/></td>
+  </tr>			
+   <tr align="right">
+  	<td class="label">详细地址:</td>
+    <td><input type="text" name="address" size="40" class="inputBg" value="{$user.address}"/></td>
+  </tr>	           
+   <tr align="right">
+  	<td class="label">邮箱:</td>
+    <td><input type="text" name="email" size="40" class="inputBg" value="{$user.email}"/></td>
+  </tr>
+    <tr align="right">
+  	<td class="label">手机电话:</td>
+    <td><input type="text" name="mobile_phone" size="40" class="inputBg" value="{$user.mobile_phone}"/></td>
+  </tr> 
+    <tr align="right">
+  	<td class="label">身份证号:</td>
+    <td><input type="text" name="card" size="40" class="inputBg" value="{$user.card}"/></td>
+  </tr>
+   <tr align="right">
+  	<td class="label">密码:</td>
+    <td><input type="text" name="password" size="40" class="inputBg" value="{$user.password}"/></td>
+  </tr>
+   <tr align="right">
+  	<td class="label">所在部门(分公司):</td>
+    <td><input type="text" name="credit_line" size="40" class="inputBg" value="{$user.credit_line}"/></td>
+  </tr>
+    <tr align="right">
+  	<td class="label">真实姓名:</td>
+    <td><input type="text" name="real_name" size="40" class="inputBg" value="{$user.real_name}"/></td>
+  </tr>
+     <tr align="right">
+  	<td class="label">月消费额度:</td>
+    <td><input type="text" name="yueedu" size="40" class="inputBg" value="{$user.yueedu}"/></td>
+  </tr>
+                          <tr>
+                              <td colspan="2" align="center">
+                                  <input name="act" type="hidden" value="save_user" />
+                                  <input name="user_id" type="hidden" value="{$user.user_id}" />
+                                  <input name="submit" type="submit" value="确认" class="main-btn main-btn-large" />
+                              </td>
+                          </tr>
+            </table>
+			</form>
+        </div>
+    </div>
+</div>
+
+<div class="pop-mask"></div>
+<div class="site-footer">
+    <div class="footer-related"> <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> </div>
+</div>
+</body>
+
+
+</html>

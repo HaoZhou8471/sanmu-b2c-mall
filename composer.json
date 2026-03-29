@@ -1,0 +1,96 @@
+{
+    "name": "laravel/laravel",
+      "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+        "barryvdh/laravel-dompdf": "^0.8.3",
+        "doctrine/dbal": "^2.9",
+        "endroid/qr-code": "^3.1",
+        "fabpot/goutte": "^3.2",
+        "fideloper/proxy": "^4.2",
+        "firebase/php-jwt": "^5.0",
+        "graham-campbell/manager": "^4.7",
+        "gregwar/captcha": "^1.1.2",
+        "guzzlehttp/guzzle": "6.4.1",
+        "ipip/datx": "^0.2.0",
+        "jellybool/translug": "^2.0",
+        "jenssegers/agent": "^2.6",
+        "laravel/framework": "^8.0",
+        "laravel/tinker": "^2.0",
+        "maatwebsite/excel": "^3.0",
+        "overtrue/easy-sms": "^1.0",
+        "overtrue/laravel-lang": "~3.0",
+        "overtrue/laravel-pinyin": "^3.0",
+        "overtrue/laravel-socialite": "^3.0",
+        "overtrue/laravel-ueditor": "~1.0",
+        "overtrue/laravel-wechat": "^6.0",
+        "paypal/rest-api-sdk-php": "^1.14",
+        "picoprime/barcodegen": "^1.5",
+        "predis/predis": "^1.1",
+        "riverslei/payment": "^5.1",
+        "topthink/think-image": "^1.0",
+        "workerman/gateway-worker": "^3.0",
+        "yurunsoft/chinese-util": "^1.1"
+    },
+    "require-dev": {
+        "beyondcode/laravel-dump-server": "^1.0",
+        "filp/whoops": "^2.0",
+        "fakerphp/faker": "^1.13.0",
+        "mockery/mockery": "^1.0",
+        "nunomaduro/collision": "^4.1",
+        "phpunit/phpunit": "^9.3",
+        "zircote/swagger-php": "^3.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "easywechat-composer/easywechat-composer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ],
+        "files": [
+            "app/Support/constant.php",
+            "app/Support/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    }
+}

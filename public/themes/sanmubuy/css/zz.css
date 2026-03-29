@@ -1,0 +1,124 @@
+/*reset css*/
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+
+body {
+    height: 2000px;
+    background: #555;
+    font-family: 'microsoft yahei';
+}
+
+.izl-rmenu {
+    margin-right: 0;
+    position: fixed;
+	display:block;
+    right: 2px;
+    top: 65%;
+    -webkit-box-shadow: #DDD 0px 1px 5px;
+    -moz-box-shadow: #DDD 0px 1px 5px;
+    box-shadow: #DDD 0px 1px 5px;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+}
+
+.izl-rmenu .consult {
+    background-image: url(../images/call_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+.izl-rmenu .consult .phone {
+    background-color: #fff;
+    position: absolute;
+    width: 160px;
+    left: -160px;
+    top: 0px;
+    line-height: 50px;
+    color: #000;
+    font-size: 18px;
+    text-align: center;
+    display: none;
+    box-shadow: #DDD -1px 1px 4px;
+}
+
+.izl-rmenu a.consult:hover .phone {
+    display: inline !important;
+}
+
+.izl-rmenu .cart {
+    background-image: url(../images/weixin_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+}
+
+.izl-rmenu a.cart:hover .pic {
+    display: block;
+}
+
+.izl-rmenu .btn_top {
+    background-image: url(../images/float_top.gif);
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: block;
+    width: 50px;
+    height: 40px;
+    background-color: #fff;
+    -webkit-transition: all 0s ease-in-out;
+    -moz-transition: all 0s ease-in-out;
+    -o-transition: all 0s ease-in-out;
+    transition: all 0s ease-in-out;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-bottom-left-radius: 10px;
+    -moz-border-bottom-right-radius: 10px;
+}
+
+.izl-rmenu .cart .pic {
+    display: none;
+    position: absolute;
+    left: -160px;
+    top: -40px;
+    width: 160px;
+    height: 160px;
+    background: url(../images/weixin.jpg);
+}
+
+#udesk-feedback-tab {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 2px;
+    top: 65%;
+    margin-top: -76px;
+    -webkit-box-shadow: #DDD 0px -1px 5px;
+    -moz-box-shadow: #DDD 0px -1px 5px;
+    box-shadow: #DDD 0px -1px 5px;
+    cursor: pointer;
+    display: block;
+    z-index: 999;
+    background: url(../images/qq_icon.png) no-repeat;
+    background-position: center;
+    background-color: #fff !important;
+    border-top-left-radius: 10px!important;
+    border-top-right-radius: 10px!important;
+    -webkit-border-top-left-radius: 10px!important;
+    -webkit-border-top-right-radius: 10px!important;
+    -moz-border-top-left-radius: 10px!important;
+    -moz-border-top-right-radius: 10px!important;
+
+}

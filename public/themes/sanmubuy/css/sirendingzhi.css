@@ -1,0 +1,92 @@
+#fenlei{
+	display: none;
+}
+.content{
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	
+}
+.content .banner{
+	
+	height: 421px;
+	background-color: black;
+}
+.content .banner .banner-lunbo{
+	margin: 0 auto;
+	width: 1200px;
+	height: 421px;
+	background:url(../images/私人订制banner.png);
+}
+/*************************左边类目********************************/
+.content .main{
+	margin: 0 auto;
+	margin-top:50px ;
+	width: 1200px;
+	height: auto;
+	overflow: hidden;
+}
+.content .main .main-left{
+	float: left;
+	width: 320px;
+	height: auto;
+	overflow: hidden;
+	border: 1px solid #C3C3C3;
+}
+.content .main .main-left ul li ul li{
+	padding-left: 20px;
+	margin-bottom: 4px;
+}
+.content .main .main-left ul li ul li a{
+	color: #333333;
+}
+.content .main .main-left li{
+    list-style-position:inside;
+	list-style-type:disc;
+}
+
+.content .main .main-left  h3{
+	height: 40px;
+	background: #1d5eac;
+	font: 16px/40px "microsoft yahei";
+	color: #F1F1F1;
+	padding-left: 20px;
+	margin-bottom: 1px;
+}
+/*************************右边类目********************************/
+.content .main .main-right{
+	float: left;
+	width: 856px;
+	height: auto;
+	margin-left: 20px;
+	overflow: hidden;
+	border: 1px solid #C3C3C3;
+}
+.content .main .main-right h2{
+	font: 16px/40px "tahoma","arial","microsoft yahei";
+	border-bottom: 1px solid #C3C3C3;
+	color: #1d5eac;
+	padding-left: 10px;
+}
+.content .main .main-right .main-right-neirong{
+	margin: 0 auto;
+	width: 838px;
+	height: auto;
+	overflow: hidden;
+	margin-top: 10px;
+}
+.content .main .main-right .main-right-neirong dl{
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	
+}
+.content .main .main-right .main-right-neirong dl.last{
+	margin-right: 0;
+}
+.content .main .main-right .main-right-neirong dt{
+	width: 200px;
+	height: 140px;
+	border: 1px solid #C3C3C3;
+}

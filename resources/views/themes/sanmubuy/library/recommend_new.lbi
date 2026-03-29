@@ -1,0 +1,25 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $new_goods} -->
+<div class="tabs-panel sale-goods-list">
+  <ul>
+<!-- {foreach name=index_goods from=$new_goods item=goods}-->
+<!--{if $smarty.foreach.index_goods.iteration <11}-->
+<li class="fore{$smarty.foreach.index_goods.iteration}">
+<a href="{$goods.url}">
+<img src="{$goods.thumb}" alt="{$goods.name|escape:html}" height="160" width="160">
+</a>
+<p>
+<a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name}</a>
+</p>
+<h4><!-- {if $goods.promote_price neq ""} -->
+{$goods.promote_price}
+<!-- {else}-->
+{$goods.shop_price}
+<!--{/if}--></h4>
+</li>
+<!--{/if}-->
+<!--{/foreach}-->
+  </ul>
+</div>
+<!-- {/if} --> 
+

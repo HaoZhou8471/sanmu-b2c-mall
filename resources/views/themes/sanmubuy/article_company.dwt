@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <style type="text/css">  
+      
+                       #allmap{width:100%;height:500px;}  
+      
+             </style>  
+      
+             <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nXezGCeI80ZZK2IsGWDWPMgS"></script>  
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="themes/sanmubuy/js/jquery-1.9.1.min.js"></script>
+{insert_scripts files='jquery.json.js,transport.js'}
+{insert_scripts files='common.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="blank"></div>
+<div class="w1210">
+  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+  <div class="box-text">
+  	<h3>{$article.title|escape:html}</h3>
+    <div class="content">
+    	<!-- {if $article.content } --> 
+        {$article.content} 
+        <!-- {/if} -->
+    </div>
+  </div>
+</div>
+<div class="site-footer">
+  <div class="footer-related">
+  	<!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+	<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+  <div id="allmap"><script type="text/javascript">  
+             <script type="text/javascript">  
+      
+        // 百度地图API功能  
+      
+        var sContent =  
+      
+    "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>{$article.title|escape:html}</h4>" +  
+      
+    "<img style='float:right;margin:4px' id='imgDemo' src='{$article.file_url}' width='139' height='104' title='{$article.title|escape:html}'/>" +  
+      
+    "<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>{$article.description}</p>" +  
+      
+    "</div>";  
+      
+        var map = new BMap.Map("allmap");  
+      
+        var point = new BMap.Point({$article.point_x},{$article.point_y});  
+      
+        var marker = new BMap.Marker(point);  
+      
+        var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象  
+      
+        map.centerAndZoom(point, 15);  
+      
+        map.addOverlay(marker);  
+      
+        marker.addEventListener("click", function(){  
+      
+            this.openInfoWindow(infoWindow);  
+      
+            //图片加载完毕重绘infowindow  
+      
+            document.getElementById('imgDemo').onload = function (){  
+      
+                infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏  
+      
+            }  
+      
+        });  
+      
+    </script>  
+
+  </div>
+  </div>
+</div>
+</body>
+</html>

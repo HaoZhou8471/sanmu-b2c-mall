@@ -1,0 +1,148 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+     /*筛选*/
+  .filter { /*width: 765px;*/ width:760px; padding-top: 2px; background: url(../images/filterbg.jpg) repeat-x; margin-bottom:10px; }
+	.filter .filter_all_box { border: 1px solid #a2cb7d; background: #fff url(../images/filterbg_bottom.jpg) 0 bottom repeat-x; }
+
+  .filter_title { padding: 0 10px; border-bottom: 0px dotted #ccc; height: 31px; line-height: 30px; vertical-align: middle; display:none; }
+  .filter_name { float: left; font-size: 14px; }
+  .filter_name h1 { display: inline; font-size: 14px; color: #c10d7a; }
+	.filter_name strong { color: #666; }
+  .filter_reset { float: right; }
+	.filter_reset a { color: #666; }
+
+  .filter_content { margin: 0px 10px 5px; padding:5px 0 0 0; }
+  .filter_content dl { float: left;/* width: 663px;*/ width:658px; text-align: left; line-height: 30px; padding-left: 1px; }
+  .filter_content dt { float: left; font-weight: bold; padding-right: 5px; width:60px; }
+  .filter_content dd { float: left; padding-top: 4px; padding-bottom: 2px; margin: 0px 10px 2px; height: 23px; }
+  .filter_content dd a { display: block; line-height: 20px; white-space: nowrap; padding:0 10px 0 10px; }
+  .filter_content dd a:hover { color: #c10d7a;  }
+  .filter_content dd .filter_xz { color:#a2cb7d; font-weight: bold; }/*选中样式*/
+	.filter_content dd .filter_xz:hover { color: #c10d7a; }
+  .filter_box { border-bottom: 1px solid #d8dad5; height: 30px; padding-top: 1px; overflow: hidden; }
+  .filter_box2 { border-bottom: 0px solid #d8dad5; height: 30px; padding-top: 1px; overflow: hidden; }
+  .filter_opera { float: right; border: 0px solid #e3e3e3; height: 18px; margin: 5px 0px 0 0; padding-left:5px; text-align: right; background: url(../images/more_sx.png) -1px 0 no-repeat; }
+  .zhankai { background: url(../images/more_sx.png) -1px -18px no-repeat;  }
+  .filter_opera a { display: block; width: 38px; text-decoration: none; color:#818181 }
+
+</style>
+<script type="text/javascript" language="javascript"> 
+function $D1(objID){
+  return document.getElementById(objID);
+}
+function zhankai(id,obj){
+  if($D1(id).style.height=="auto"){
+    $D1(id).style.height=30+"px";
+    obj.innerHTML="更多";
+		obj.parentNode.className = "filter_opera";
+  }
+  else{
+    $D1(id).style.height="auto";
+		obj.parentNode.className += " zhankai";
+    obj.innerHTML="精简";
+		$D1(id).getElementsByTagName("dt")[0].style.height = $D1(id).offsetHeight+"px";
+  }
+}
+</script>
+
+    <div class="blank5"></div>
+        <div class="filter">
+      <div class="filter_all_box">
+        <div class="filter_title">
+          <div class="filter_name">
+            <h1>当前分类</h1>
+            &nbsp;-&nbsp;<strong>商品筛选</strong> </div>
+            <div class="filter_reset"><a href="javascript:void(0);" title="重置">重置筛选条件>></a></div>
+        </div>
+        <div class="filter_content"> 
+		  <!--{if $categories2} -->
+<!--{foreach from=$categories2 item=cat}-->
+			 <div class="select_item_attr">            
+							  
+						<div id="filter_pp" class="filter_box">
+							<dl>
+							  <dt>{$cat.name|escape:html}：</dt>
+							            <!--{foreach from=$cat.children item=child name=key2}-->
+										<!--{if $current_cat_id eq $child.id}-->
+										<dd><a class="filter_xz" rel="nofollow" title="{$child.name|escape:html}" href="{$child.url}">{$child.name|escape:html}</a></dd>
+										<!-- {else} -->
+										<dd><a rel="nofollow" title="{$child.name|escape:html}" href="{$child.url}">{$child.name|escape:html}</a></dd>
+										<!-- {/if} -->
+										 <!--{/foreach}-->              
+							</dl>
+							 <!-- {if $smarty.foreach.key2.total gte 6 } -->
+						<div class="filter_opera"><a id="filter_pp" href="javascript:void(0)" onclick="zhankai('filter_pp',this)">更多</a></div>
+						     <!-- {/if} -->
+						<div class="clear"></div>
+						</div>         
+		   </div> 
+<!--{/foreach}-->
+		   <!--{/if} --> 
+		  <!--{if $brands} -->
+			 <div class="select_item_attr">            
+							  
+						<div id="filter_ppq" class="filter_box">
+							<dl>
+							  <dt>品牌：</dt>
+										<!--{foreach from=$brands item=brand name=foop}-->
+										<!-- {if $brand.selected} -->
+										<dd><a class="filter_xz" rel="nofollow" title="{$brand.brand_name}" href="{$brand.url}">{$brand.brand_name}</a></dd>
+										<!-- {else} -->
+										<dd><a rel="nofollow" title="{$brand.brand_name}" href="{$brand.url}">{$brand.brand_name}</a></dd>
+										<!-- {/if} -->
+										 <!--{/foreach}-->              
+							</dl>
+							 <!-- {if $smarty.foreach.foop.total gte 6 } -->
+						<div class="filter_opera"><a id="filter_ppq" href="javascript:void(0)" onclick="zhankai('filter_ppq',this)">更多</a></div>
+						     <!-- {/if} -->
+						<div class="clear"></div>
+						</div>         
+		   </div> 
+		   <!--{/if} -->   
+			<!--{foreach from=$filter_attr_list item=filter_attr key=key name=foo }-->
+			<div class="select_item_attr">            
+	  
+						<div id="filter_attr{$key}" class="filter_box">
+							<dl>
+							  <dt>{$filter_attr.filter_attr_name|escape:html}：</dt>
+										<!--{foreach from=$filter_attr.attr_list item=attr name=foo1}-->
+										<!-- {if $attr.selected} -->
+										<dd><a class="filter_xz" rel="nofollow" title="{$attr.attr_value}" href="{$attr.url}">{$attr.attr_value}</a></dd>
+										<!-- {else} -->
+										<dd><a rel="nofollow" title="{$attr.attr_value}" href="{$attr.url}">{$attr.attr_value}</a></dd>
+										<!-- {/if} -->
+										 <!--{/foreach}-->              
+							</dl>
+							  <!-- {if $smarty.foreach.foo1.total gte 6 } -->
+						<div class="filter_opera"><a id="filter_attr{$key}" href="javascript:void(0)" onclick="zhankai('filter_attr{$key}',this)">更多</a></div>
+						      <!-- {/if} -->
+						<div class="clear"></div>
+						</div>         
+		   </div> 
+		  <!--{/foreach}-->          
+		  <!--{if $price_grade} -->
+			 <div class="select_item_attr">            
+							  
+						<div id="filter_jg" class="filter_box2">
+							<dl>
+							  <dt>价格：</dt>
+										<!--{foreach from=$price_grade item=grade name=foo2}-->
+										<!-- {if $grade.selected} -->
+										<dd><a class="filter_xz" rel="nofollow" title="{$grade.price_range}" href="{$grade.url}">{$grade.price_range}</a></dd>
+										<!-- {else} -->
+										<dd><a rel="nofollow" title="{$attr.attr_value}" href="{$grade.url}">{$grade.price_range}</a></dd>
+										<!-- {/if} -->
+										 <!--{/foreach}-->              
+							</dl>
+							 <!-- {if $smarty.foreach.foo2.total gte 6 } -->
+						<div class="filter_opera"><a id="filter_jg" href="javascript:void(0)" onclick="zhankai('filter_jg',this)">更多</a></div>
+						     <!-- {/if} -->
+						<div class="clear"></div>
+						</div>         
+		   </div> 
+		   <!--{/if} -->        
+
+           
+        </div>
+      </div>
+    </div>

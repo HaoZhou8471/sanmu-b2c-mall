@@ -1,0 +1,7 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php
+ $GLOBALS['smarty']->assign('index_ad_groups',get_advlist('首页生活的橱窗',5));
+?>
+<!--{if index_ad_groups}-->
+
+<!--{/if}-->

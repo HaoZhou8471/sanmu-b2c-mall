@@ -1,0 +1,130 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="themes/sanmubuy/css/sanmu_basic.css" />
+<script language="javascript"> 
+<!--
+/*屏蔽所有的js错误*/
+function killerrors() { 
+return true; 
+} 
+window.onerror = killerrors; 
+//-->
+</script>
+<script type="text/javascript" src="themes/sanmubuy/js/page.js"></script>
+<script type="text/javascript" src="themes/sanmubuy/js/bubbleup.js"></script>
+{include file='library/user_header.lbi'}
+<div class="header">
+	<div class="w1210">
+		<div class="mall-logo"> <a href="./"><img src="../images/logo.png" width="80" alt="三目商城logo"/></a> </div>
+		<div class="mall-logo-right"> <a href="#" target="_blank" rel="noopener noreferrer"></a> </div>
+		<div class="mall-search">
+    <div id="search-tips" style="display:none;"></div>
+    <form class="mallSearch-form" method="get" name="searchForm" id="searchForm" action="search.php" onSubmit="return checkSearchForm()">
+      <input type='hidden' name='type' id="searchtype" value="{$smarty.request.type|default:0}">
+      <div class="mallSearch-input">
+
+        <div class="s-combobox">
+          <div class="s-combobox-input-wrap">
+            <input aria-haspopup="true" role="combobox" class="s-combobox-input" name="keywords" id="keyword" tabindex="9" accesskey="s" onkeyup="STip(this.value, event);" autocomplete="off"  value="{if $search_keywords}{$search_keywords|escape}{else}请输入关键词{/if}" onFocus="if(this.value=='请输入关键词'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='请输入关键词'" type="text">
+          </div>
+        </div>
+        <input type="submit" value="搜索" class="button main-bg-color"  >
+      </div>
+    </form>
+
+  </div>
+		{include file='library/user_header_right.lbi'} 
+	</div>
+</div>
+
+<div class="all-nav">
+	<div class="w1210">
+		<div class="home-category fl" > <a href="catalog.php" class="menu-event" title="查看全部商品分类">全部商品分类<i></i></a> </div>
+		<div class="allnav fl" id="nav">
+        <ul>
+          <li><a class="nav" href="index.html" title="首页">首页</a></li>
+          <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav } -->
+          <li><a class="nav {if $nav.active eq 1}current{/if}" href="{$nav.url}" title="{$nav.name}" {if $nav.opennew eq 1}target="_blank" rel="noopener noreferrer" {/if}>{$nav.name}</a></li>
+          <!-- {/foreach} -->
+        </ul>
+        <div class="wrap-line"><span style="left:15px;"></span></div>
+      </div>
+		<div class="all-cat main-bg-color"> 
+        <!--{foreach name=get_categories_tree from=$get_categories_tree item=cat name=cat0}-->
+
+        <div class="list">
+          <dl class="cat">
+            <dt class="cat-name"> <a href="{$cat.url}" target="_blank" rel="noopener noreferrer" title="进入{$cat.name}频道">{$cat.name}</a> </dt>
+            
+          </dl>
+          <div class="categorys">
+            <div class="item-left fl"> 
+              
+           
+              <div class="subitems"> 
+			  <dd>
+              
+                <!--{foreach from=$cat.cat_id item=child name=namechild}-->
+                <dl class="fore1">
+                  <dt><font size="2"> <a href="{$child.url}" target="_blank" rel="noopener noreferrer" title="{$child.name|escape:html}">{$child.name|escape:html}</a><i> &#9660</i> </font></dt>
+                  <dd> 
+                    <!--{foreach from=$child.cat_id item=childer name=childername}--> 
+                    <a href="{$childer.url}" target="_blank" rel="noopener noreferrer" title="{$childer.name|escape:html}">{$childer.name|escape:html}</a> 
+                    <!--{/foreach}--> 
+                  </dd>
+                </dl>
+                <!--{/foreach}--> 
+                </dd>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!--{/foreach}--> 
+      </div>
+  	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+{literal}
+function checkSearchForm()
+{
+    if(document.getElementById('keyword').value)
+    {
+	var frm  = document.getElementById('searchForm');
+	var type = parseInt(document.getElementById('searchtype').value);
+	frm.action = type==0 ? 'search.php' : 'stores.php';
+        return true;
+    }
+    else
+    {
+	alert("请输入关键词！");
+        return false;
+    }
+}
+
+function myValue1(){
+	document.getElementById('keyword').value = "请输入商品名称或编号...";
+}
+
+function myValue2(){
+	document.getElementById('keyword').value = "";
+}
+{/literal}
+//]]>
+
+$(function(){
+	//图片放大效果
+    $(".header-right img").bubbleup({scale:70});
+	
+	//头部搜索
+	$('.search-type').hover(function(){
+		$(this).css({"height":"auto","overflow":"visible"});
+	},function(){
+		$(this).css({"height":32,"overflow":"hidden"});
+	});
+	
+	
+});
+</script> 
+
+<script type="text/javascript" src="themes/sanmubuy/js/nav.js"></script>

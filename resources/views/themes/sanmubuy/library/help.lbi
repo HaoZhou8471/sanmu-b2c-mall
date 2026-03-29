@@ -1,0 +1,20 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $helps}
+<div class="footer-article w1210"> 
+  <!-- {foreach from=$helps item=help_cat name=no} -->
+  <dl class="col-article {if $smarty.foreach.no.first}col-article-first{/if}">
+    <dt>{$help_cat.cat_name}</dt>
+    <!-- {foreach from=$help_cat.article item=item} -->
+    <dd><a rel="nofollow" href="help.php?id={$item.article_id}" target="_blank" rel="noopener noreferrer">{$item.short_title}</a></dd>
+    <!-- {/foreach} -->
+  </dl>
+  <!-- {/foreach} -->
+  <dl class="col-article">
+    <dt>服务支持</dt>
+    <dd>客服电话 028-86037345</dd>
+    <dd>         028-86037365</dd>
+    <dd>客服 QQ 2385663282</dd>
+    <dd>工作时间 8：30-18：00</dd>
+  </dl>
+</div>
+{/if}

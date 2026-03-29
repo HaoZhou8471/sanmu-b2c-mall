@@ -1,0 +1,31 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+<div class="w">
+	<div class="crumbs-nav-main clearfix">
+		{foreach from=$data.body item=cat name=cat}
+		<div class="crumbs-nav-item">
+			<div class="menu-drop">
+				<div class="trigger{if !$cat.cat_tree} bottom{/if}">
+					<a href="{$cat.url}"><span>{$cat.cat_name}</span></a>
+					<i class="iconfont icon-down"></i>
+				</div>
+                {if $cat.cat_tree}
+				<div class="menu-drop-main">
+					<ul>
+						{foreach from=$cat.cat_tree item=tree}
+						<li><a href="{$tree.url}">{$tree.cat_name}</a></li>
+						{/foreach}
+					</ul>
+				</div>
+                {/if}
+			</div>
+			{if !$smarty.foreach.cat.last || $data.foot}<i class="iconfont icon-right"></i>{/if}
+		</div>
+		{/foreach}
+		{if $data.foot}
+		<span class="cn-goodsName">{$data.foot}</span>
+		{/if}
+	</div>
+</div>

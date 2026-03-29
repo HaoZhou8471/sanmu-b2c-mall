@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link rel="stylesheet" type="text/css" href="themes/sanmubuy/css/pre_sale.css" />
+<link rel="stylesheet" type="text/css" href="themes/sanmubuy/css/commons.css" />
+<link rel="stylesheet" type="text/css" href="css/sirendingzhi.css" />
+<script type="text/javascript" src="themes/sanmubuy/js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="themes/sanmubuy/js/magiczoom.js" ></script>
+<script type="text/javascript" src="themes/sanmubuy/js/magiczoom_plus.js" ></script>
+<script type="text/javascript" src="themes/sanmubuy/js/scrollpic.js"></script>
+<script type="text/javascript" src="themes/sanmubuy/js/gw_totop.js" ></script>
+<script type="text/javascript" src="themes/sanmubuy/js/pre_sale.js" ></script>
+<script type="text/javascript" src="themes/sanmubuy/js/slideshow.js" ></script>
+
+<script type="text/javascript">
+function $id(element) {
+  return document.getElementById(element);
+}
+//切屏--是按钮，_v是内容平台，_h是内容库
+function reg(str){
+  var bt=$id(str+"_b").getElementsByTagName("h2");
+  for(var i=0;i<bt.length;i++){
+    bt[i].subj=str;
+    bt[i].pai=i;
+    bt[i].style.cursor="pointer";
+    bt[i].onclick=function(){
+      $id(this.subj+"_v").innerHTML=$id(this.subj+"_h").getElementsByTagName("blockquote")[this.pai].innerHTML;
+      for(var j=0;j<$id(this.subj+"_b").getElementsByTagName("h2").length;j++){
+        var _bt=$id(this.subj+"_b").getElementsByTagName("h2")[j];
+        var ison=j==this.pai;
+        _bt.className=(ison?"":"h2bg");
+      }
+    }
+  }
+  $id(str+"_h").className="none";
+  $id(str+"_v").innerHTML=$id(str+"_h").getElementsByTagName("blockquote")[0].innerHTML;
+}
+</script>
+{* 包含脚本文件 *}
+{insert_scripts files='common.js',global.js,compare.js'}
+{insert_scripts files='jquery.json.js,transport.js,jquery.countdown-2.5.3.min.js'}
+</head>
+<body>
+<!-- 咨询商品 -->
+<input type="hidden" id="chat_goods_id" value="{$goods.goods_id}" />
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="margin-w1210 clearfix">
+  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+  <div id="product-intro" class="goods-info">
+      <div id="preview">
+        
+        <div style="height:10px; line-height:10px; clear:both;"></div>
+        <!--相册 START--> 
+        <!-- #BeginLibraryItem "/library/goods_gallery.lbi" --><!-- #EndLibraryItem --> 
+        <!--相册 END-->
+        <div class="goods-gallery-bottom">
+        	 
+          <div class="mc" id="os_pinglun">
+            <div class="blank20"></div>
+            <!-- #BeginLibraryItem "/library/my_comments.lbi" --><!-- #EndLibraryItem --> </div>
+          <div class="mc" id="os_advantage">
+            <div class="blank20"></div>
+            <!-- #BeginLibraryItem "/library/packing_list.lbi" --><!-- #EndLibraryItem --> </div>
+          <div class="mc" id="os_shouhou">
+            <div class="blank20"></div>
+            <!-- #BeginLibraryItem "/library/pre_baozhang.lbi" --><!-- #EndLibraryItem --> </div>
+          <div class="mc" id="os_changjian">
+            <div class="blank20"></div>
+            <!-- #BeginLibraryItem "/library/pre_common_problem.lbi" --><!-- #EndLibraryItem --> </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+	  	$(".ce-right").height($("#main_widget_1").height());
+		var obj11 = document.getElementById("main-nav-holder");
+		var top11 = getTop(obj11);
+		var isIE6 = /msie 6/i.test(navigator.userAgent);
+		function getTop(e){
+			var offset = e.offsetTop;
+			if(e.offsetParent != null) offset += getTop(e.offsetParent);
+			return offset;
+		}
+	  </script> 
+    </div>
+    <!--right end--> 
+</div>
+<div class="clear"></div>
+		<div class="content">
+			<div class="banner">
+				<div class="banner-lunbo">
+					<ul>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+			<div class="main">
+
+				<div class="main-left">
+					<ul>
+						<li style="list-style: none;">
+							<a href="#">
+								<h3>关于私人订制</h3></a>
+							<ul>
+								<li>
+									<a href="#">什么是私人订制</a>
+								</li>
+								<li>
+									<a href="#">私人订制的兴起</a>
+								</li>
+								<li>
+									<a href="#">如何看待私人订制</a>
+								</li>
+								<li>
+									<a href="#">私人订制的意义</a>
+								</li>
+								<li>
+									<a href="#">更多…</a>
+								</li>
+							</ul>
+						</li>
+						<li style="list-style: none;">
+							<a href="#">
+								<h3>生活用品订制</h3></a>
+						</li>
+						<li style="list-style: none;">
+							<a href="sirendingzhi-seal.html">
+								<h3>印章订制</h3></a>
+						</li>
+						<li style="list-style: none;">
+							<a href="sirendingzhi-travel.html">
+								<h3>出行用品订制</h3></a>
+						</li>
+						<li style="list-style: none;">
+							<a href="sirendingzhi-office.html">
+								<h3>办公用品订制</h3></a>
+						</li>
+						<li style="list-style: none;">
+							<a href="sirendingzhi-other.html">
+								<h3>其他订制</h3></a>
+						</li>
+						<li style="list-style: none;">
+							<a href="#">
+								<h3>联系我们</h3></a>
+							<ul>
+								<li>成都三目商贸有限公司</li>
+								<li>定制联系人：袁先生（经理）</li>
+								<li>联系电话：028-86037345<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;028-86037365</li>
+								<li>联系邮箱：cdsm@cdsm.com.cn</li>
+								<li>公司地址：成都市高新区科园南路1号<br />&nbsp;&nbsp;&nbsp;海特国际广场3栋202</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="main-right">
+					<h2>生活用品订制</h2>
+					<div class="main-right-neirong">
+						<dl>
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+						<dl>
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+						<dl>
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+						<dl class="last">
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+						<dl>
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+						<dl>
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+						<dl>
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+						<dl class="last">
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+						<dl>
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+						<dl>
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+						<dl>
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+						<dl class="last">
+							<dt></dt>
+							<dd>水杯订制</dd>
+							<dd><img src="images/立即联系.png" align="right" /></dd>
+						</dl>
+
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- #BeginLibraryItem "/library/right_sidebar.lbi" --><!-- #EndLibraryItem -->
+<div class="site-footer">
+    <div class="footer-related">
+  		<!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+  		<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+{if !$smarty.session.user_id >0}
+$('.goods-col').click(function(){
+	$('.pop-login,.pop-mask').show();	
+})
+{/if}	
+var goods_id = {$goods_id};
+var goodsattr_style = {$cfg.goodsattr_style|default:1};
+var gmt_end_time = {$promote_end_time|default:0};
+{foreach from=$lang.goods_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+
+var goodsId = {$goods.goods_id};
+var now_time = {$now_time};
+
+<!-- {literal} -->
+onload = function(){
+  //changePrice();
+  changePriceAll();
+  fixpng();
+  ShowMyComments({$goods.goods_id},0,1);
+  try { onload_leftTime(now_time); }
+  catch (e) {}
+}
+
+
+/**
+ * 点选可选属性或改变数量时修改商品价格的函数
+ */
+function changePrice()
+{
+  var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
+  var qty = document.forms['ECS_FORMBUY'].elements['number'].value;
+
+  Ajax.call('goods.php', 'act=price&id=' + goodsId + '&attr=' + attr + '&number=' + qty + '&pre_sale_id={$goods.pre_sale_id}', changePriceResponse, 'GET', 'JSON');
+}
+
+/**
+ * 接收返回的信息
+ */
+function changePriceResponse(res)
+{
+  if (res.err_msg.length > 0)
+  {
+    var qty = res.qty;
+    
+    if(qty != undefined && qty != null && qty >= 0)
+    {
+    	document.forms['ECS_FORMBUY'].elements['number'].value = qty;
+    }
+    
+    alert(res.err_msg);
+  }
+  else
+  {
+    document.forms['ECS_FORMBUY'].elements['number'].value = res.qty;
+
+    if (document.getElementById('ECS_GOODS_AMOUNT')){
+      document.getElementById('ECS_GOODS_AMOUNT').innerHTML = res.result;
+      var price = new String(res.result).replace(/[^0-9\.]/ig,"");
+      $("#weikuan").html(parseFloat(price) - parseInt($("#dingjin").html()));
+    }
+    if(document.getElementById('shows_number')){
+	document.getElementById('shows_number').innerHTML = res.attr_num;
+    }
+    if(document.getElementById('mark_price')){
+	document.getElementById('mark_price').innerHTML = res.result1;
+    }
+  }
+}
+
+/**
+* 获取商品范围价格
+*/
+function changePriceAll()
+{
+	var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
+	var qty = document.forms['ECS_FORMBUY'].elements['number'].value;
+	Ajax.call('goods.php', 'act=allprice&id=' + goodsId + '&attr=' + attr + '&number=1' + '&pre_sale_id={$goods.pre_sale_id}', changePriceResponse, 'GET', 'JSON');
+}
+
+
+<!-- {/literal} -->
+</script>
+<script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js" type="text/javascript"></script>
+<script type="text/javascript">
+Ajax.call('goods.php', 'act=get_pickup_info&province='+remote_ip_info.province+'&city='+remote_ip_info.city+'&district='+remote_ip_info.district,
+		function(res){
+			if(res.error == 0) {
+				var result = '<ul>';
+				if (res.result)
+				{
+					for(var i=0; i<res.result.length; i++)
+					{
+						result += '<li>店名：'+res.result[i].shop_name+'<br>联系人：'+res.result[i].contact+'&nbsp;&nbsp;联系方式：'+res.result[i].phone + '<br>地址：'+res.result[i].address+'</li>';
+					}
+					result += '</ul>';
+				}
+				result = "<div style='padding:10px 0;text-align:center;'>请选择区县</div>";
+				document.getElementById('pickup_point_list').innerHTML = result;
+				document.getElementById('province').innerHTML = res.city_info.province;
+				document.getElementById('province').onclick = function(){
+					get_area_list({$shop_country}, '');
+				}
+				document.getElementById('city').innerHTML = res.city_info.city;
+				document.getElementById('city').onclick = function(){
+					get_area_list(res.city_info.province_id, res.city_info.province);
+				}
+				document.getElementById('area_label').innerHTML = res.city_info.province + '&nbsp;' + res.city_info.city;
+				get_area_list(res.city_info.city_id, res.city_info.city);
+			}
+		}, 'GET', 'JSON');
+	function show_list()
+	{
+		document.getElementById('pickup_point').style.borderBottom = "1px solid #fff";
+		document.getElementById('pickup_point_list').style.display = "block";
+	}
+	function hide_list()
+	{
+		document.getElementById('pickup_point').style.borderBottom = "1px solid #ccc";
+		document.getElementById('pickup_point_list').style.display = "none";
+	}
+	function get_area_list(parent_id, name)
+	{
+		Ajax.call('goods.php', 'act=get_area_list&parent_id='+parent_id, function(res) {
+			var result = '';
+			for(var i=0; i<res.length; i++)
+			{
+				result += '<li';
+				if(res[i].region_name.length>5)
+					result += ' style="widht:170px;"';
+				result += '><a href="javascript:void(0)" ';
+				if(res[i].region_type == 3)
+				{
+					result += 'onclick="get_pickup_point_list('+res[i].region_id+', this)">';
+				}
+				else
+				{
+					result += 'onclick="get_area_list('+res[i].region_id+', \''+res[i].region_name+'\')">';
+				}
+				result+=res[i].region_name+'</a></li>';
+			}
+			result += '';
+			document.getElementById('area_list').innerHTML = result;
+
+			switch(res[0].region_type)
+			{
+				case '1':
+					document.getElementById('province').onclick = function(){get_area_list(parent_id, name);};
+					document.getElementById('city').innerHTML = '市';
+					document.getElementById('district').innerHTML = '区';
+					switch_hover('province');
+					break;
+				case '2':
+					document.getElementById('city').onclick = function(){get_area_list(parent_id, name);};
+					document.getElementById('province').innerHTML = name;
+					document.getElementById('city').innerHTML = '市';
+					document.getElementById('district').innerHTML = '区';
+					switch_hover('city');
+					break;
+				case '3':
+					document.getElementById('city').innerHTML = name;
+					document.getElementById('district').innerHTML = '区';
+					switch_hover('district');
+					break;
+			}
+			hide_list();
+			//show_area();
+		}, 'GET', 'JSON');
+	}
+
+	function switch_hover(sel)
+	{
+		if(sel == 'province')
+		{
+			document.getElementById('city').className = '';
+			document.getElementById('district').className = '';
+			document.getElementById('province').className = 'hover';
+		}
+		else if(sel == 'city')
+		{
+			document.getElementById('city').className = 'hover';
+			document.getElementById('district').className = '';
+			document.getElementById('province').className = '';
+		}
+		else
+		{
+			document.getElementById('city').className = '';
+			document.getElementById('district').className = 'hover';
+			document.getElementById('province').className = '';
+		}
+	}
+
+	function get_pickup_point_list(region_id, obj)
+	{
+		var name = obj.innerHTML;
+		document.getElementById('district').innerHTML = name;
+		var label = document.getElementById('province').innerHTML + '&nbsp;' +
+					document.getElementById('city').innerHTML + '&nbsp;' +
+					document.getElementById('district').innerHTML;
+		document.getElementById('area_label').innerHTML = label;
+		
+		Ajax.call('goods.php', 'act=get_pickup_point_list&district_id='+region_id, function(res) {
+			var result = '<ul>';
+				if(res.length > 0)
+				{
+					for(var i=0; i<res.length; i++)
+					{
+						result += '<li>'+res[i].shop_name+'&nbsp;&nbsp;地址：'+res[i].address+
+									'<br>联系人：'+res[i].contact+'&nbsp;&nbsp;联系方式：'+res[i].phone + '</li>';
+					}
+					result += '</ul>';
+					document.getElementById('pickup_point_list').innerHTML = result;
+				}
+				else
+					document.getElementById('pickup_point_list').innerHTML = '<div style="padding:10px 0;text-align:center;">该地区尚未开放自提点</div>';
+
+				hide_area();
+				show_list();
+		}, 'GET', 'JSON');
+	}
+	function show_area()
+	{
+		document.getElementById('area_label').style.borderBottom = "1px #fff solid";
+		document.getElementById('area_list_wrap').style.display = "block";
+	}
+	function hide_area()
+	{
+		document.getElementById('area_label').style.borderBottom = "1px solid #ccc";
+		document.getElementById('area_list_wrap').style.display = "none";
+	}
+</script>
+
+</html>

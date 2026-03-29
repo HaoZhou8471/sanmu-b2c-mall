@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link rel="stylesheet" type="text/css" href="themes/sanmubuy/css/user.css" />
+<script type="text/javascript" src="themes/sanmubuy/js/jquery-1.9.1.min.js"></script>
+{insert_scripts files='jquery.json.js,transport.js,json2.js'}
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,user.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="margin-w1210 clearfix"> <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+  <div class="user-left"> <!-- #BeginLibraryItem "/library/user_info.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem --> </div>
+  <div class="user-right">
+      <div class="box">
+          <!-- 用户信息界面 start-->
+          <!--{if $action eq 'adduser'}-->
+
+
+          <div class="ncm-user-profile">
+              <div class="ncm-default-form"  id="con_tab_1">
+                  <form name="formEdit" action="user.php" method="post">
+                      <table width="100%" border="0" cellpadding="10" cellspacing="1" bgcolor="#eee">
+                          <tr>
+                              <td class="label">{$lang.username}:</td>
+                              <td><input type="text" name="username" maxlength="60" value="{$user.user_name}" />{$lang.require_field}</td>
+                          </tr>
+                          <tr>
+                              <td class="label">{$lang.email}:</td>
+                              <td><input type="text" id="email" name="email" maxlength="60" size="40" value="{$user.email}" />{$lang.require_field}</td>
+                          </tr>
+                          <tr>
+                              <td class="label">手机:</td>
+                              <td><input type="text" id="mobile_phone" name="mobile_phone" maxlength="60" size="40" value="{$user.mobile_phone}" />{$lang.require_field}</td>
+                          </tr>
+
+                          <tr>
+                              <td class="label">密码:</td>
+                              <td><input type="password" name="password" maxlength="20" size="20" />{$lang.require_field}</td>
+                          </tr>
+                          <tr>
+                              <td class="label">确认密码:</td>
+                              <td><input type="password" name="confirm_password" maxlength="20" size="20" />{$lang.require_field}</td>
+                          </tr>
+
+                          <tr>
+                              <td class="label">所在部门(分公司):</td>
+							  <td><input name="credit_line" type="text" id="credit_line" maxlength="20" size="20" /></td>
+                              </select></td>
+                          </tr>
+                          <tr>
+                              <td class="label">性别:</td>
+                              <td><input type="radio" name="sex" value="0" checked="">&nbsp;保密&nbsp;<input type="radio" name="sex" value="1">&nbsp;男&nbsp;<input type="radio" name="sex" value="2">&nbsp;女&nbsp;</td>
+                          </tr>
+
+                          <tr>
+                              <td class="label">真实姓名:</td>
+                              <td><input type="text" name="real_name" size="40" class="inputBg" value="{$user.real_name}"/></td>
+                          </tr>
+                          <tr>
+                              <td class="label">身份证号:</td>
+                              <td><input type="text" name="card" size="40" class="inputBg" value="{$user.card}"/></td>
+                          </tr>
+                          <tr>
+                              <td class="label">月消费额度：</td>
+                              <td><input type="text" name="yueedu" size="40" class="inputBg" value="{$user.yueedu}"/> 元</td>
+                          </tr>
+
+
+                          <tr>
+                              <td class="label">审核状态:</td>
+                              <td>
+                                  <select name="status">
+                                      <option value="0" {if $user.status eq 0} selected="selected"{/if}>请选择审核状态</option>
+                                      <option value="1" {if $user.status eq 1} selected="selected"{/if}>审核通过</option>
+                                      <option value="2" {if $user.status eq 2} selected="selected"{/if}>审核中</option>
+                                      <option value="3" {if $user.status eq 3} selected="selected"{/if}>审核不通过</option>
+                                  </select>
+                              </td>
+                          </tr>
+
+                          <tr>
+                              <td colspan="2" align="center">
+                                  <input name="act" type="hidden" value="add_user" />
+                                  <input name="topuser" type="hidden" value="{$userid}" />
+                                  <input name="submit" type="submit" value="确认" class="main-btn main-btn-large" />
+                              </td>
+                          </tr>
+                      </table>
+
+
+
+                  </form>
+              </div>
+          </div>
+          <!--{/if}-->
+          <!-- 用户信息界面 end-->
+
+
+
+          </div>
+  </div>
+</div>
+<div class="pop-main pop-compare">
+  <div class="pop-header"> <span>温馨提示</span> <a class="pop-close" href="javascript:;" title="关闭"></a> </div>
+  <div class="pop-con"> <i class="pop-icon"></i>
+    <p class="pop-text" style="padding-top: 20px;">您确定要取消该订单吗？取消订单后，不能恢复。</p>
+    <div class="pop-btn"> <a href="javascript:;" class="main-bg-color sure-btn">确定</a><a class="cancel-btn">取消</a><span class="clear"></span></div>
+  </div>
+</div>
+<div class="pop-mask"></div>
+<div class="site-footer">
+  <div class="footer-related"> <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> </div>
+</div>
+</body>
+
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+$(function(){
+	$('.cancel-order').click(function(){
+		$('.pop-mask').show();
+		$('.pop-compare').show().css({'top':($(window).height()-$('.pop-compare').height())/2});
+		$('.sure-btn').attr('href',$(this).prev('.none').attr('href'));
+		
+	})	
+})
+</script>
+</html>
