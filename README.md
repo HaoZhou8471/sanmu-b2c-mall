@@ -15,10 +15,10 @@ This project is an archive of the official B2C e-commerce website code developed
 
 The system previously included complete product categorization, an points mall, and backend management functions.
 
-*(Insert image link for 1.jpg here)*
+*![Interface 1](1.jpg)*
 
-*(Insert image link for 2.jpg here)*
+*![Interface 2](2.jpg)*
 
 ## Software Copyright Certificate
 
-*(Insert image link for 18.jpg here)*
+*![Copyright](18.jpg)*
