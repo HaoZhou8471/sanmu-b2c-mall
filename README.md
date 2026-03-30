@@ -22,7 +22,7 @@ This platform was built with a custom architecture (referencing Laravel principl
 
 **Archived UI Screenshots:**
 
-*(Product category page and main UI)*
+
 ![Interface 1](1.jpg)
 
 *(Points Shop and product details UI)*
