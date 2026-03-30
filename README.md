@@ -45,15 +45,5 @@ This platform successfully obtained the national computer software copyright reg
 
 - **Primary Purpose:** This archive focuses on showcasing the clean code structure, business logic implementation, and frontend design patterns of a fully developed commercial platform.
 
-## 🏆 Intellectual Property
 
-This platform successfully obtained the national computer software copyright registration (Registration No.: **2018SR794918**) in 2018. The official certificate can be viewed in this repository as `18.jpg`.
-
-## ⚠️ Legacy Status Notes
-
-- **Database Missing:** The original MySQL database dump is unavailable.
-- **Offline Error:** Due to historical high concurrency and subsequent server changes without maintenance, the database (`ecs_sessions` table) is corrupted, causing the live site crash error shown in `3.png`.
-- **Primary Purpose:** This archive focuses on showcasing the clean code structure, business logic implementation, and frontend design patterns of a fully developed commercial platform.
-
----
 *Developed with dedication by Hao Zhou.*
